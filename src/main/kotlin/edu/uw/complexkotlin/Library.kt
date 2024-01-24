@@ -20,6 +20,24 @@ val fizzbuzz : (IntRange) -> String = { nums ->
     }.fold("") {acc, str -> acc + str}
 }
 
+val fizzbuzzExtra : (IntRange) -> String = { nums ->
+    nums.map{
+        when {
+            it % 3 == 0 && it % 5 == 0 -> "FIZZBUZZ"
+            it % 3 == 0 -> "FIZZ"
+            it % 5 == 0 -> "BUZZ"
+            it % 7 == 0 -> "DOH!"
+            else -> ""
+        }
+    }.fold("") {acc, str -> acc + str}
+}
+
+//fun fizzbuzzgen(divisorMap: Map<Int, String>) {
+////    return {
+////        print('working')
+////    }
+//}
+
 // Example usage
 /*
 if (fizzbuzz(1..2) == "")
@@ -83,3 +101,22 @@ enum class Philosopher {
 class Command(val prompt: String) {
     operator fun invoke(message: String): String { return prompt + message }
 }
+
+// EXTRA CREDIT
+
+// Seneca the Younger:
+// was a Stoic philosopher of Ancient Rome.
+// He was a statesman, dramatist, and satirist
+// he was exiled to the island of Corsica in AD 41
+// was allowed to return in AD 49 to tutor Nero
+// he later became emperor Nero's advisor
+// Nero stopped liking Seneca in AD 65 and he
+// was forced to kill himself because he got
+// involved in a conspiracy to assassinate Nero
+// but he was innocent
+
+// School of philosophy: Stoicism
+
+// Stoicism is a philosophical school that believes people can achieve a well-lived
+//life by practicing the four virtues: wisdom, courage, temperance, and justice, and
+//living in accordance with nature
